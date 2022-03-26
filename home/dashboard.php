@@ -30,7 +30,7 @@
                         <h4>Manages Users</h4>
                         <p>View, edit and delete data</p>
                     </div>
-                    <ul>
+                    <ul style="margin: 10px">
                         <li><a href="#">Add users</a></li>
                         <li><a href="#">View Users</a></li>
                         <li><a href="#">Add users</a></li>
@@ -41,7 +41,7 @@
     </div>
 
     <div class="main-container" style="background-color: white>
-        <header style="padding: 10px; background-color: #152733">
+        <header style="padding: 10px;">
             <div class="row">
                <div class="p-3 col-md-9">
                    <h5 style="color: white">Analytics</h5>
@@ -70,6 +70,20 @@
 
                 <?php 
                      $conn = mysqli_connect('localhost', 'root', '', 'ellipse_db');
+                    if(isset($_GET['del'])){
+                        $del_id = $_GET['del'];
+                        $delete = "DELETE FROM user WHERE user_id='$del_id'";
+                        $run_delete = mysqli_query($conn, $delete);
+                        if($run_delete === true){
+                                echo "Record Has been Deleted";
+                        } else {
+                            echo "Faied to delete the record";
+                        }
+                    }
+
+
+
+
                      $select = "SELECT * FROM user";
                      $run = mysqli_query($conn, $select);
                      while ($row_user = mysqli_fetch_array($run)){
@@ -86,7 +100,7 @@
                             <td>
                                 <div class="input-group btn-group-sm">
                                 <a href="dashboard.php?del=<?php echo $user_id ?>" class="btn btn-danger">Delete</a>
-                                <a href="#" class="btn btn-primary">Update</a>
+                                <a href="edit.php?edi=<?php echo $user_id ?>" class="btn btn-secondary">Edit</a>
                                 </div>
                             </td>
                     </tr>
