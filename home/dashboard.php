@@ -8,6 +8,24 @@
     <link rel="stylesheet" href="dash.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-grid.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+
+    <style>
+
+        ul li {
+            margin: 10px;
+            padding: 10px;
+            background-color: grey;
+            width: 200px;
+            color: black;
+            list-style: none;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 <body>
     <input type="checkbox" name="" id="menu-toggle">
