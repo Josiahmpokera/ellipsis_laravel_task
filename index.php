@@ -1,3 +1,8 @@
+<?php
+include 'connection.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,63 +12,38 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-grid.css">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <title>Document</title>
+    <title>Register</title>
 </head>
 <body style="background-color: rgb(204, 220, 223);">
     <div class="container">
+        <Form method="post" enctype="multipart/form-data">
         <div class="form-body">
             <div class="row">
                 <div class="form-holder">
                     <div class="form-content">
                         <div class="form-items">
-                            <h3>Register Today</h3>
-                            <p>Fill in the data below.</p>
+                            <h3 style="text-align: center; padding: 10px">Register Today</h3>
+                            <p style="text-align: center;">Fill in the data below.</p>
                             <form class="requires-validation" novalidate>
                                 <div class="col-md-12">
-                                   <input class="form-control" type="text" name="name" placeholder="Full Name" required>
+                                   <input class="form-control" type="text" name="full_name" placeholder="Full Name" required>
                                    <div class="valid-feedback">Username field is valid!</div>
                                    <div class="invalid-feedback">Username field cannot be blank!</div>
                                 </div>
     
                                 <div class="col-md-12">
-                                    <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
+                                    <input class="form-control" type="email" name="user_email" placeholder="E-mail Address" required>
                                      <div class="valid-feedback">Email field is valid!</div>
                                      <div class="invalid-feedback">Email field cannot be blank!</div>
                                 </div>
     
-                               <div class="col-md-12">
-                                    <select class="form-select mt-3" required>
-                                          <option selected disabled value="">Position</option>
-                                          <option value="jweb">Junior Web Developer</option>
-                                          <option value="sweb">Senior Web Developer</option>
-                                          <option value="pmanager">Project Manager</option>
-                                   </select>
-                                    <div class="valid-feedback">You selected a position!</div>
-                                    <div class="invalid-feedback">Please select a position!</div>
-                               </div>
     
-    
-                               <div class="col-md-12">
-                                  <input class="form-control" type="password" name="password" placeholder="Password" required>
+                               <div class="col-md-12 pb-2">
+                                  <input class="form-control" type="password" name="user_password" placeholder="Password" required>
                                    <div class="valid-feedback">Password field is valid!</div>
                                    <div class="invalid-feedback">Password field cannot be blank!</div>
                                </div>
     
-    
-                               <div class="col-md-12 mt-3">
-                                <label class="mb-3 mr-1" for="gender">Gender: </label>
-    
-                                <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
-                                <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
-    
-                                <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
-                                <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
-    
-                                <input type="radio" class="btn-check" name="gender" id="secret" autocomplete="off" required>
-                                <label class="btn btn-sm btn-outline-secondary" for="secret">Secret</label>
-                                   <div class="valid-feedback mv-up">You selected a gender!</div>
-                                    <div class="invalid-feedback mv-up">Please select a gender!</div>
-                                </div>
     
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
@@ -73,7 +53,7 @@
                       
     
                                 <div class="form-button mt-3">
-                                    <button id="submit" type="submit" class="btn btn-primary form-control">Register</button>
+                                    <input id="submit" type="submit" name="submit" class="btn btn-primary form-control">
                                 </div>
                             </form>
                         </div>
@@ -81,6 +61,7 @@
                 </div>
             </div>
         </div>
+        </Form>
     
     </div>
 
@@ -106,4 +87,5 @@ Array.from(forms)
 })()
 
 </script>
+
 </html>
