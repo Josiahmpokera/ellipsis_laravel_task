@@ -38,7 +38,7 @@ img {
     left: 0;
     bottom: 0;
     padding: 1rem;
-    background-color: #c6c8ce;
+    background-color: #152733;
 }
 
 .sidebar-container {
@@ -51,10 +51,13 @@ img {
 .main-container {
     margin-left: 345px;
     width: calc(100vw - 345px);
-    background: var(--main-text);
 }
 
 .sidebar-menu ul {
     list-style: none;
     margin: 10px;
+}
+
+.sidebar-card  {
+margin: 30px;
 }

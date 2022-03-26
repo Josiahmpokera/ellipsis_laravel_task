@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="dash.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-grid.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -12,12 +12,11 @@
 <body>
     <input type="checkbox" name="" id="menu-toggle">
 
-   
     <div class="sidebar">
         <div class="sidebar-container">
-            <div class="brand">
-                <h3 style="text-align: center">
-                    Logo
+            <div class="brand"> 
+                <h3 style="text-align: center; color: #152733">
+                    Ellipse
                 </h3>
             </div>
 
@@ -28,30 +27,74 @@
                 <div class="sidebar-card mt-5">
                     <img src="" alt="">
                     <div>
-                        <h4>Make Adsense</h4>
-                        <p>Add ads to your Videos and earn money</p>
+                        <h4>Manages Users</h4>
+                        <p>View, edit and delete data</p>
                     </div>
-                    <button class="btn btn-success">Create now</button>
+                    <ul>
+                        <li><a href="#">Add users</a></li>
+                        <li><a href="#">View Users</a></li>
+                        <li><a href="#">Add users</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="main-container">
-        <header style="padding: 10px;">
-            <div>
-               <div>
-                   <h1>Analytics</h1>
-                   <p>Display analytics ablut your Channel</p>
+    <div class="main-container" style="background-color: white>
+        <header style="padding: 10px; background-color: #152733">
+            <div class="row">
+               <div class="p-3 col-md-9">
+                   <h5 style="color: white">Analytics</h5>
+               </div>
+               <div class="p-3 col-md-3">
+                   <h6 style="color: white"><a href="#" style="text-decoration: none; color: #e9eefd;">Josephine Michael</a></h6>
                </div>
             </div>
-
-            <div class="header-action">
-                <button class="btn btn-main">
-                    Upload
-                </button>
-            </div>
         </header>
+
+        <div class="jumbotron" style="background-color: #e9eefd; padding: 25px">
+            <h3>View User</h3>
+        </div>
+
+        <div class="jumbotron p-5" style="background-color: white">
+            <table class="table table-bordered">
+                <thead class="thead-dark" style="background-color: #152733; color: white; padding: 10px">
+                    <tr>
+                        <th>User ID</th>
+                        <th>Full Name</th>
+                        <th>Email address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                <?php 
+                     $conn = mysqli_connect('localhost', 'root', '', 'ellipse_db');
+                     $select = "SELECT * FROM user";
+                     $run = mysqli_query($conn, $select);
+                     while ($row_user = mysqli_fetch_array($run)){
+                     $user_id = $row_user['user_id'];
+                     $user_name = $row_user['user_name'];
+                     $user_email = $row_user['user_email'];
+                     $user_passwrd = $row_user['user_password']
+
+                ?>
+                    <tr>
+                        <td><?php echo $user_id ?></td>
+                        <td><?php  echo $user_name ?></td>
+                        <td><?php echo $user_email ?></td>
+                            <td>
+                                <div class="input-group btn-group-sm">
+                                <a href="dashboard.php?del=<?php echo $user_id ?>" class="btn btn-danger">Delete</a>
+                                <a href="#" class="btn btn-primary">Update</a>
+                                </div>
+                            </td>
+                    </tr>
+
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>
