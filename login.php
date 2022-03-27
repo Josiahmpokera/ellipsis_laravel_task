@@ -48,7 +48,7 @@
                                 </div>
                             </form>
 
-                            <!---Make Connecction witth Database-->
+                            <!---Make Connection witth Database-->
 
                         </div>
                     </div>

@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-grid.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 
-
     <style>
-
         ul li {
             margin: 10px;
             padding: 10px;
@@ -53,8 +51,8 @@
                         <p>View, edit and delete data</p>
                     </div>
                     <ul style="margin: 10px">
-                        <a href="#"><li>Add users</li></a>
-                        <a href="#"><li>View Users</li></a>
+                        <a href="dashboard.php"><li>View Users</li></a>
+                        <a href="#"><li>Manage Users</li></a>
                         <a href="#"><li>Add users</li></a>
                     </ul>
                 </div>

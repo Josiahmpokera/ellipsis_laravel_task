@@ -53,8 +53,8 @@
                         <p>View, edit and delete data</p>
                     </div>
                     <ul style="margin: 10px">
-                        <a href="#"><li>Add users</li></a>
-                        <a href="#"><li>View Users</li></a>
+                        <a href="dashboard.php"><li>View Users</li></a>
+                        <a href="#"><li>Manage Users</li></a>
                         <a href="#"><li>Add users</li></a>
                     </ul>
                 </div>
@@ -66,10 +66,10 @@
         <header style="padding: 10px;">
             <div class="row">
                <div class="p-3 col-md-9">
-                   <h5 style="color: white">Analytics</h5>
+                   <h5 style="color: black">Analytics</h5>
                </div>
-               <div class="p-3 col-md-3">
-                   <h6 style="color: white"><a href="#" style="text-decoration: none; color: #e9eefd;">Josephine Michael</a></h6>
+               <div class="p-3 pl-3 col-md-3">
+                   <h6 style="color: black;"><a href="#" style="text-decoration: none; color: #e9eefd;">Josephine Michael</a></h6>
                </div>
             </div>
         </header>
@@ -92,26 +92,6 @@
             }
 
 
-
-            if(isset($_POST['insert_btn'])){
-                //POST the user data
-            $edit_user_name = $_POST['full_name'];
-            $edit_user_email = $_POST['user_email'];
-            $edit_user_passwrd = $_POST['user_password'];
-    
-            $update = "UPDATE user SET user_name='$edit_user_name', user_email='$edit_user_email', user_password='$edit_user_passwrd' WHERE user_id=''$edit_id";
-    
-             $run_update= mysqli_query($conn, $update);
-    
-             if($run_update === true){
-                 echo "Data Hase Been Inserted";
-             } else {
-                 echo "Failed Tyr Again";
-             }
-    
-        }
-    
-
             ?>
 
 
@@ -132,6 +112,37 @@
                 </div>
             </div>
         </div>
+
+            <?php 
+            
+            $conn = mysqli_connect('localhost', 'root', '', 'ellipse_db');
+            
+            
+            if(isset($_POST['insert_btn'])){
+
+                //POST the user data
+            $edit_user_name = $_POST['full_name'];
+            $edit_user_email = $_POST['user_email'];
+            $edit_user_passwrd = $_POST['user_password'];
+    
+            $update = "UPDATE user SET user_name='$edit_user_name', 
+            user_email='$edit_user_email', 
+            user_password='$edit_user_passwrd' 
+            WHERE user_id=''$edit_id";
+    
+             $run_update= mysqli_query($conn, $update);
+    
+             if($run_update === true){
+                 echo "Data Hase Been Inserted";
+             } else {
+                 echo "Failed Tyr Again";
+             }
+    
+        }
+    
+
+            ?>
+
     </div>
 </body>
 
