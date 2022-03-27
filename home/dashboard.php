@@ -15,15 +15,19 @@
         ul li {
             margin: 10px;
             padding: 10px;
-            background-color: grey;
+            background-color: white;
             width: 200px;
             color: black;
             list-style: none;
+            border-radius: 3px;
         }
 
-        ul li a {
+        ul a {
             text-decoration: none;
             color: black;
+        }
+        ul li:hover {
+            backgrouond-color: grey;
         }
     </style>
 </head>
@@ -49,9 +53,9 @@
                         <p>View, edit and delete data</p>
                     </div>
                     <ul style="margin: 10px">
-                        <li><a href="#">Add users</a></li>
-                        <li><a href="#">View Users</a></li>
-                        <li><a href="#">Add users</a></li>
+                        <a href="#"><li>Add users</li></a>
+                        <a href="#"><li>View Users</li></a>
+                        <a href="#"><li>Add users</li></a>
                     </ul>
                 </div>
             </div>
