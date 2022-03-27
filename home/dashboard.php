@@ -122,7 +122,7 @@
                             <td>
                                 <div class="input-group btn-group-sm">
                                 <a href="dashboard.php?del=<?php echo $user_id ?>" class="btn btn-danger">Delete</a>
-                                <a href="edit.php?edi=<?php echo $user_id ?>" class="btn btn-secondary">Edit</a>
+                                <a href="edit.php?edit=<?php echo $user_id ?>" class="btn btn-secondary">Edit</a>
                                 </div>
                             </td>
                     </tr>

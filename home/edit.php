@@ -79,32 +79,54 @@
         </div>
         <?php
               $conn = mysqli_connect('localhost', 'root', '', 'ellipse_db');
-              if(isset($_GET['del'])){
-                $del_id = $_GET['del'];
-                $delete = "DELETE FROM user WHERE user_id='$del_id'";
-                $run_delete = mysqli_query($conn, $delete);
-                if($run_delete === true){
-                        echo "Record Has been Deleted";
-                } else {
-                    echo "Faied to delete the record";
-                }
+              if(isset($_GET['edit'])){
+                $edit_id = $_GET['edit'];
+            
+
+               $select = "SELECT * FROM user WHERE user_id='$edit_id'";
+               $run = mysqli_query($conn, $select);
+               $row_user = mysqli_fetch_array($run);
+               $user_name = $row_user['user_name'];
+               $user_email = $row_user['user_email'];
+               $user_passwrd = $row_user['user_password'];
             }
 
 
-        ?>
+
+            if(isset($_POST['insert_btn'])){
+                //POST the user data
+            $edit_user_name = $_POST['full_name'];
+            $edit_user_email = $_POST['user_email'];
+            $edit_user_passwrd = $_POST['user_password'];
+    
+            $update = "UPDATE user SET user_name='$edit_user_name', user_email='$edit_user_email', user_password='$edit_user_passwrd' WHERE user_id=''$edit_id";
+    
+             $run_update= mysqli_query($conn, $update);
+    
+             if($run_update === true){
+                 echo "Data Hase Been Inserted";
+             } else {
+                 echo "Failed Tyr Again";
+             }
+    
+        }
+    
+
+            ?>
+
 
         <div class="jumbotron p-5" style="background-color: white">
             <div class="row">
                 <div class="col-md-7">
                     <form action="" class="form-control">
                         <label for="#">Full Name</label>
-                        <input type="text" name="user_name" class="form-control">
+                        <input type="text" name="user_name" class="form-control mb-4" value="<?php echo $user_name ?>">
                         <label for="#" >Email address</label>
-                        <input type="text" name="user_email" class="form-control">
+                        <input type="text" name="user_email" class="form-control mb-4" value="<?php echo $user_email ?>">
                         <label for="#">Password</label>
-                        <input type="text" name="user_password" class="form-control">
-                        <div class="form-button mt-3">
-                            <button id="submit" type="submit" class="btn btn-secondary form-control">Update</button>
+                        <input type="text" name="user_password" class="form-control mb-4" value="<?php echo $user_passwrd ?>">
+                        <div class="form-button mt-3 ">
+                            <button id="submit" type="submit" name="insert_btn" class="btn btn-success form-control">Update</button>
                         </div>
                     </form>
                 </div>
@@ -112,4 +134,7 @@
         </div>
     </div>
 </body>
+
+
+
 </html>

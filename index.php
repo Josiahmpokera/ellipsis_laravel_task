@@ -53,8 +53,9 @@ include 'connection.php';
                       
     
                                 <div class="form-button mt-3">
-                                    <input id="submit" type="submit" name="submit" class="btn btn-primary form-control">
+                                    <input id="submit" type="submit" name="submit" class="btn btn-primary form-control" >
                                 </div>
+                         
                             </form>
                         </div>
                     </div>
@@ -85,6 +86,8 @@ Array.from(forms)
     }, false)
   })
 })()
+
+
 
 </script>
 
