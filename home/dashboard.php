@@ -19,7 +19,6 @@
             list-style: none;
             border-radius: 3px;
         }
-
         ul a {
             text-decoration: none;
             color: black;
@@ -43,7 +42,7 @@
             <div class="avartar-wrapper">
                 <div class="avatar-info">
                 </div>
-                
+                 
                 <div class="sidebar-card mt-5">
                     <img src="" alt="">
                     <div>
@@ -100,10 +99,6 @@
                             echo "Faied to delete the record";
                         }
                     }
-
-
-
-
                      $select = "SELECT * FROM user";
                      $run = mysqli_query($conn, $select);
                      while ($row_user = mysqli_fetch_array($run)){
@@ -124,7 +119,6 @@
                                 </div>
                             </td>
                     </tr>
-
                     <?php } ?>
                 </tbody>
             </table>
